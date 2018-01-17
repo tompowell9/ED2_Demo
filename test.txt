@@ -1,3 +1,208 @@
 1. Hello test
 
 2. Hello again
+
+
+Notes on how to clone and move files between web and laptop.
+
+1. On GitHub website, go to the repository of interest
+ -> copy the web address of repository from green "clone" button
+ -> Ex. in tompowell/ED2-1 copy from the "clone with HTTPs" 
+    (Here, I created a new repository "ED2-Demo")
+
+2. open GitCMD on laptop
+ -> go to ('cd') the Git directory on the laptop that holds the repositories.
+      C:\Users\TLPowell\Desktop\LBNL_work\GitHub
+ -> clone repository from online GitHub repository from step 1.
+      type: git clone <HTTPS address from step 1>
+      this now clones the online repository to the laptop GitHub directory
+
+3. In the local repository, create a test file: "test.txt"
+
+4. Move "test.txt" to the web repository (Stay in the laptop Git repository)
+ -> type: git status 
+    This shows all files that have been modified, but the modifications have
+    not been tracked.
+ -> type: git add <files to commit>  (in this case test.txt)
+    This step only makes a list of the files that have been modified that 
+    I want to commit.
+ -> type: git commit -m "new test file"
+    This step commits the modifications of each file in the add step to the local
+    record and makes local a version of the files that I am working on.
+ -> type: git status
+    should show that the working tree is clean
+ -> type: git push
+    This moves the local files that I have created or modified to my 
+    web-based repository. 
+
+
+
+-->  Log of the intstructions that I typed to
+clone the web-based repository
+
+
+C:\Users\TLPowell>git remote add origin https://github.com/tompowell9/ED2_Demo.g
+it
+fatal: Not a git repository (or any of the parent directories): .git
+
+C:\Users\TLPowell>git remote add origin https://github.com/tompowell9/ED2-1.git
+fatal: Not a git repository (or any of the parent directories): .git
+
+C:\Users\TLPowell>git clone https://github.com/tompowell9/ED2-1.git
+Cloning into 'ED2-1'...
+remote: Counting objects: 20467, done.
+remote: Total 20467 (delta 0), reused 0 (delta 0), pack-reused 20467
+Receiving objects: 100% (20467/20467), 11.64 MiB | 4.99 MiB/s, done.
+Resolving deltas: 100% (15850/15850), done.
+
+C:\Users\TLPowell>git clone https://github.com/xiangtao-princeton/ED2-1.git
+fatal: destination path 'ED2-1' already exists and is not an empty directory.
+
+C:\Users\TLPowell>git clone https://github.com/EDmodel/ED2.git
+Cloning into 'ED2'...
+remote: Counting objects: 34118, done.
+remote: Total 34118 (delta 0), reused 0 (delta 0), pack-reused 34118
+Receiving objects: 100% (34118/34118), 186.74 MiB | 4.00 MiB/s, done.
+Resolving deltas: 100% (20969/20969), done.
+
+C:\Users\TLPowell>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\TLPowell>dir
+ Volume in drive C is OS
+ Volume Serial Number is 2057-CAC2
+
+ Directory of C:\Users\TLPowell
+
+01/17/2018  09:43 AM    <DIR>          .
+01/17/2018  09:43 AM    <DIR>          ..
+01/15/2018  08:56 PM               921 .bash_profile
+11/18/2015  03:21 PM    <DIR>          .datathief
+01/17/2018  09:24 AM               185 .gitconfig
+11/11/2015  11:43 PM             1,893 .hdfview2.11
+01/10/2018  05:50 PM             1,176 .hdfview2.5
+09/06/2016  04:11 PM    <DIR>          .oracle_jre_usage
+03/10/2016  12:50 PM    <DIR>          .ssh
+01/15/2018  07:38 PM    <DIR>          .swc
+01/11/2018  12:53 PM    <DIR>          Contacts
+01/16/2018  07:47 AM    <DIR>          Desktop
+01/11/2018  12:53 PM    <DIR>          Documents
+01/15/2018  09:02 PM    <DIR>          Downloads
+01/17/2018  09:44 AM    <DIR>          ED2
+01/17/2018  09:27 AM    <DIR>          ED2-1
+01/11/2018  12:53 PM    <DIR>          Favorites
+01/11/2018  12:53 PM    <DIR>          Links
+01/11/2018  12:53 PM    <DIR>          Music
+01/15/2018  07:38 PM             1,432 nano.rc
+01/11/2018  12:53 PM    <DIR>          Pictures
+09/12/2015  07:52 AM    <DIR>          Roaming
+01/11/2018  12:53 PM    <DIR>          Saved Games
+01/11/2018  12:53 PM    <DIR>          Searches
+09/29/2015  11:00 PM    <DIR>          Tracing
+01/11/2018  12:53 PM    <DIR>          Videos
+               5 File(s)          5,607 bytes
+              21 Dir(s)  56,989,409,280 bytes free
+
+C:\Users\TLPowell>cd Desktop/LBNL_work
+
+C:\Users\TLPowell\Desktop\LBNL_work>cd ED2-1
+The system cannot find the path specified.
+
+C:\Users\TLPowell\Desktop\LBNL_work>cd GitHub/ED2-1
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2-1>cd ..
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub>git clone https://github.com/tompowel
+l9/ED2_Demo.git
+Cloning into 'ED2_Demo'...
+warning: You appear to have cloned an empty repository.
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ED2-1/
+        ED2-master.zip
+        ED2-master/
+        ED2_Demo/
+        ed-clm/
+        ed_tools/
+        tools_benchmarking_evaluation - Copy/
+        tools_benchmarking_evaluation/
+        tools_benchmarking_evaluation_Apr2017/
+        tools_benchmarking_evaluation_v1/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub>cd ED2_Demo
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git add test.txt
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git commit -m "new test file
+"
+[master (root-commit) 3d317c3] new test file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git push
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 217 bytes | 217.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/tompowell9/ED2_Demo.git
+ * [new branch]      master -> master
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git add test.txt
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git commit -m "modify1 test
+file"
+[master 43cfced] modify1 test file
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo>git push
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 264 bytes | 264.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/tompowell9/ED2_Demo.git
+   3d317c3..43cfced  master -> master
+
+C:\Users\TLPowell\Desktop\LBNL_work\GitHub\ED2_Demo> 
